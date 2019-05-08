@@ -1,0 +1,28 @@
+.navbar{width: 100%;
+
+}
+.fas{
+    color: rgb(87, 211, 87);
+}
+h1,h4{
+    color: rgb(87, 211, 87);
+}
+#SignUp{
+    color: rgb(159, 223, 159);width: 100px;
+}
+#s{
+    width: 100%;
+}
+
+h3{
+    color: rgb(87, 211, 87);
+}
+#userIcon{
+    margin-left: 20%;
+}
+#myProfile{
+    margin-left: 10%;
+}
+#logoutButton{
+    margin-left: 10%;
+}

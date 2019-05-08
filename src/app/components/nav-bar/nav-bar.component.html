@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+  <div *ngIf="!userLoggedIn">
+    <a href=""><i class="fas fa-sign-in-alt fa-2x" (click)="signIn()"></i></a>
+    <a class="navbar-brand ml-2" routerLink="/login" href="#" [routerLink]="['/login']" 
+    routerLinkActive="active"><h3>Sign in</h3></a>
+  </div>
+  
+  <div>
+    <button class="btn btn-outline-success ml-2"  *ngIf="userLoggedIn"
+    [routerLink]="['/MovieComponent']">Search for movies</button>
+  </div>
+    <a id="SignUp" class="ml-3"   [routerLink]="['/signup']" ><h3 id="s" >Sign up</h3></a>
+ 
+
+  <div id="myProfile" *ngIf="userLoggedIn">
+    
+    <a href="#" [routerLink]="['/dashboard']" >
+      <button class="btn btn-outline-success ml-2" type="button"
+      >My Profile</button></a>
+  </div>
+
+  <div *ngIf="userLoggedIn" class="d-flex p-2" id="userIcon">
+    <i class="fas fa-user-tie fa-2x p-2"> </i>
+    <h4 class="p-2">Welcome {{userName}}!</h4>
+  </div>
+  <div *ngIf="userLoggedIn" id="logoutButton">
+
+    <a href="" class="ml-2"><button class="btn btn-outline-success ml-2" type="button"
+        (click)="logout()" [routerLink]="['/login']" routerLinkActive="active" >Logout</button></a>
+  </div>
+</nav>
+<div style="text-align:center">
+  <h2>
+    Welcome to Rent Movie!
+  </h2>
+</div>

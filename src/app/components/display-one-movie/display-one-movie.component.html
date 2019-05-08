@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <form [formGroup]="rentForm" (ngSubmit)="rentMovie()" id="rentForm">
+        <div class="form-group">
+          <h5>Select number of days to rent.</h5>
+          <select value="1" class="custom-select form-control" formControlName="selectDays" id="daysOfRent"
+            name="numberOfDays">
+            <option value="1">One</option>
+            <option selected value="2">Two</option>
+            <option value="3">Three</option>
+            <option value="4">Four</option>
+          </select>
+        </div>
+         <div
+          *ngIf="getform()['selectDays'].invalid && (getform()['selectDays'].dirty || getform()['selectDays'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="getform()['selectDays'].errors.required">
+            Number of days is required.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Rent Movie</button>
+        <div *ngIf="checkRentForm()" class="alert alert-danger">
+            Choose appropriate values.
+          </div>
+      </form>
+
+
+    </div>
+
+
+
+
+    <div class="col-8 ">
+      <div id="moreinfo">
+        <h6>More info about the choosen movie</h6>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" [src]="movie.poster" alt="Card image cap">
+        <div class="card-body container-fluid">
+          <h5 class="card-title">Title:<span class="ml-5">{{movie.title}}</span></h5>
+          <h5 class="card-title">Imdb ID:<span class="ml-5">{{movie.imdbID}}</span></h5>
+          <h5 class="card-title">Imdb Rating:<span class="ml-5">{{movie.imdbRating}}</span></h5>
+          <h5 class="card-title">Release Year:<span class="ml-5">{{movie.year}}</span></h5>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>

@@ -1,0 +1,18 @@
+.form-signin {
+    max-width: 380px;
+    padding: 15px 35px 45px;
+    margin: 0 auto;
+    background-color: rgb(7, 31, 54);
+    border: 1px solid rgba(9, 170, 182, 0.1);  
+    color: aqua;
+    max-height:200px;
+    }
+    #title{
+        color: rgb(3, 59, 59);
+    }
+    .wrapper{
+      text-align: center;
+    }
+    h2{
+      color: aqua;
+    }

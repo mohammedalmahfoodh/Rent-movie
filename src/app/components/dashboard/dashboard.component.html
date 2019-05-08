@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+
+
+    <div class="col-7">
+      <div class="row">
+        <ng-container *ngFor="let movie of customer.listOfMovies ;let i=index ">
+
+          <div class="card" style="width: 17rem;">
+            <img class="card-img-top" [src]="movie.Poster" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-title">Title: <span>{{movie.title}}</span></p>
+              <p>Rent Date:<span> {{movie.startRent}}     </span> </p>
+              <p>Dead line:<span> {{movie.deadLineOfRent}}     </span> </p>
+              <p>Exceded dead line:<span> {{movie.late}}     </span> </p>
+            </div>
+          </div>
+
+
+
+
+          <div *ngIf="(i+1)%2==0" class="w-100"></div>
+        </ng-container>
+
+      </div>
+
+    </div>
+
+
+    <div class="col-5">
+      <h1>welcome {{username}}</h1>
+      <mat-list role="list" *ngIf="customer">
+        <mat-list-item role="listitem">
+          <h5>First Name:<span>{{customer.firstName}}</span></h5>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <h5>social security number:<span>{{customer.socialsecuritynumber}}</span></h5>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <h5>Phone:<span>{{customer.phone}}</span></h5>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <h5>Email:<span>{{customer.email}}</span></h5>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <h5>Address:<span>{{customer.address}}</span></h5>
+        </mat-list-item>
+
+      </mat-list>
+    </div>
+  </div>
+</div>

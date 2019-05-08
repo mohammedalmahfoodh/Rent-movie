@@ -1,0 +1,54 @@
+<div class="container mx-auto" style="width: 200px;">
+  <form class="" #autoCompleteForm="ngForm" style="width: 100%;">
+    <mat-form-field style="width: 100%;">
+      <h5>Enter first 3 digits</h5>
+      <input class="border-bottom   border-dark" style="width: 200px;" #autocomplete="ngModel" (keyup)="getMovies()"
+        name="autocomplete" required [(ngModel)]="movieName" ngModel matInput type="text" />
+      <mat-error *ngIf="autocomplete.invalid">Please Enter minimum 3 digits</mat-error>
+      <div *ngIf="moviesLength">{{errorName}}</div>
+    </mat-form-field>
+
+  </form>
+
+</div>
+
+
+<div class="container">
+  <div class="row" id="showmovies">
+    <div class="col-10 container-fluid ">
+<div class="row">
+    <ng-container
+      
+    *ngFor="let movie of moviesToDisplay.search | paginate: { itemsPerPage: 4, currentPage: p }  ;let i=index">
+    <div class="col">
+        <a href="#" (click)="sendOneMovieToDisplay(movie)" [routerLink]="['/displayOneMovie']" >
+            <div class="card" style="width: 11rem;">
+              <img class="card-img-top" [src]="movie.Poster" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Title:</h5><span>{{movie.title}}</span>
+
+                <a href="#" class="btn btn-danger">Mor Information
+                </a>
+              </div>
+            </div>
+          </a>
+    </div>         
+    
+     
+      <div *ngIf="(i+1)%4==0" class="w-100"></div>
+  </ng-container>
+ 
+</div>
+      
+    </div>
+  </div>
+    <div class="row">
+      
+        
+      <div id="pagination" class="mt-3 card">
+        <pagination-controls class="card-item" (pageChange)="p = $event"></pagination-controls>
+      </div>
+
+    </div>
+  
+</div>
