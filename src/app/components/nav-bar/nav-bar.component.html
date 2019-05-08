@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg  ">
   <div *ngIf="!userLoggedIn">
     <a href=""><i class="fas fa-sign-in-alt fa-2x" (click)="signIn()"></i></a>
     <a class="navbar-brand ml-2" routerLink="/login" href="#" [routerLink]="['/login']" 
@@ -9,26 +9,38 @@
     <button class="btn btn-outline-success ml-2"  *ngIf="userLoggedIn"
     [routerLink]="['/MovieComponent']">Search for movies</button>
   </div>
-    <a id="SignUp" class="ml-3"   [routerLink]="['/signup']" ><h3 id="s" >Sign up</h3></a>
+    <a id="SignUp" class="ml-3" *ngIf="!userLoggedIn"   [routerLink]="['/signup']" ><h3 id="s" >Sign up</h3></a>
  
-
-  <div id="myProfile" *ngIf="userLoggedIn">
+  
+  
+  <img *ngIf="userLoggedIn" class="img-fluid" id="movieLogo" src="../../../assets/imag/cinema_movies_logo_black_background.png" alt="">
+  <img class="img-fluid" id="movieLogo2" src="../../../assets/imag/take_2_movies.jpg.png" alt="">
+ 
+      <div *ngIf="userLoggedIn" class="d-flex p-2" id="userIcon">
+          <i class="fas fa-user-tie fa-2x p-2"> </i>
+          <h6 class="p-2">Welcome {{userName}}!</h6>
+        </div>
     
-    <a href="#" [routerLink]="['/dashboard']" >
-      <button class="btn btn-outline-success ml-2" type="button"
-      >My Profile</button></a>
-  </div>
+      <div id="myProfile" *ngIf="userLoggedIn" class="mt-1 p-2">    
+          <a href="#" [routerLink]="['/dashboard']" >
+            <button class="btn btn-outline-success " type="button"
+            >My Profile</button></a>
+        </div>
+      <div *ngIf="userLoggedIn" id="logoutButton" class="mt-1 p-2">
+    
+        <a href="" ><button class="btn btn-outline-success " type="button"
+            (click)="logout()" [routerLink]="['/login']" routerLinkActive="active" >Logout</button></a>
+      </div>
 
-  <div *ngIf="userLoggedIn" class="d-flex p-2" id="userIcon">
-    <i class="fas fa-user-tie fa-2x p-2"> </i>
-    <h4 class="p-2">Welcome {{userName}}!</h4>
-  </div>
-  <div *ngIf="userLoggedIn" id="logoutButton">
 
-    <a href="" class="ml-2"><button class="btn btn-outline-success ml-2" type="button"
-        (click)="logout()" [routerLink]="['/login']" routerLinkActive="active" >Logout</button></a>
-  </div>
+   
+
+
+  
+
 </nav>
+
+
 <div style="text-align:center">
   <h2>
     Welcome to Rent Movie!

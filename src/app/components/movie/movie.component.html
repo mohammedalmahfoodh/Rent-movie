@@ -22,7 +22,7 @@
     *ngFor="let movie of moviesToDisplay.search | paginate: { itemsPerPage: 4, currentPage: p }  ;let i=index">
     <div class="col">
         <a href="#" (click)="sendOneMovieToDisplay(movie)" [routerLink]="['/displayOneMovie']" >
-            <div class="card" style="width: 11rem;">
+            <div class="card" style="width: 15rem;">
               <img class="card-img-top" [src]="movie.Poster" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Title:</h5><span>{{movie.title}}</span>

@@ -1,10 +1,10 @@
 .navbar{width: 100%;
-
+ background-color: black;
 }
 .fas{
     color: rgb(87, 211, 87);
 }
-h1,h4{
+h1,h4,h6{
     color: rgb(87, 211, 87);
 }
 #SignUp{
@@ -13,16 +13,30 @@ h1,h4{
 #s{
     width: 100%;
 }
+#movieLogo{
+    max-width: 100px;max-height: 100px;
+}
+
+#movieLogo2{
+    max-width: 100px;max-height: 100px;
+    margin-left: 280px;
+}
 
 h3{
     color: rgb(87, 211, 87);
 }
 #userIcon{
-    margin-left: 20%;
+    margin-left: 270px;
 }
 #myProfile{
-    margin-left: 10%;
+   
 }
 #logoutButton{
-    margin-left: 10%;
+   
+}
+#r-container{
+
+}
+#myProfile{
+  
 }

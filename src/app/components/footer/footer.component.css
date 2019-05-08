@@ -1,3 +1,19 @@
 footer{
-    margin-top: 20%;
+    margin-top: 500px;
+}
+img{
+    max-width: 13rem;
+    max-height: 13rem;
+}
+.navbar{
+    background-color: black;
+}
+.card-body{
+    background-color: rgb(109, 121, 4);
+}
+#contact{
+    margin-left: 15%;
+}
+h4,h5{
+    color: rgb(240, 226, 30);
 }

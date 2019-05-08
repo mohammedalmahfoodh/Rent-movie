@@ -2,6 +2,7 @@ import { Movie } from 'src/app/models/Movie';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { MovieService } from 'src/app/services/movie.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { MovieService } from 'src/app/services/movie.service';
 export class DisplayOneMovieComponent implements OnInit {
   movie:Movie;
   rentForm:FormGroup;
-  constructor(private formBuilder: FormBuilder,private movieService: MovieService,) {
+  constructor(private formBuilder: FormBuilder,private movieService: MovieService,private router:Router) {
     this.movie=new Movie();
     
    }
@@ -46,6 +47,8 @@ export class DisplayOneMovieComponent implements OnInit {
       this.movieService.rentMovie(this.movie).subscribe(res=>{
        console.log(res)
       });
+
+      this.router.navigate(['/dashboard'])
     }
     
   }
